@@ -34,6 +34,7 @@ app.use(express.json());
 app.use('/', eventController)
 
 
+
 // LISTENER
 app.listen(PORT, () => {
     console.log(`listening on port ${PORT}`);
