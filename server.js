@@ -31,8 +31,9 @@ db.on('open', () => {
 // MIDDLEWARE 
 app.use(cors())
 app.use(express.json());
-app.use('/', eventController)
+app.use('/events', eventController)
 
+app.get('/', (req, res) => res.send('Working'))
 
 
 // LISTENER
