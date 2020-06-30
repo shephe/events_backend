@@ -7,7 +7,7 @@ const cors = require('cors');
 // GLOBAL VARIABLES 
 const PORT = process.env.PORT || 3000;
 const db = mongoose.connection;
-const MONGODB_URI = process.env.MONGODB_URL || 'mongodb://localhost:27017/events';
+const MONGODB_URL = process.env.MONGODB_URI || 'mongodb://localhost:27017/events';
 const eventController = require('./controllers/events.js')
 
 // CORS STUFF
@@ -23,7 +23,7 @@ const corsOptions = {
 }
 
 // DATABASE
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true});
+mongoose.connect(MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true});
 db.on('open', () => {
     console.log('Mongo is connected')
 });
