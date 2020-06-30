@@ -33,7 +33,10 @@ app.use(cors())
 app.use(express.json());
 app.use('/events', eventController)
 
-app.get('/', (req, res) => res.send('Working'))
+app.get('/', (req, res) => {
+    res.send('Working')
+    console.log(process.env.MONGODB_URL, MONGODB_URI)
+})
 
 
 // LISTENER
