@@ -34,7 +34,7 @@ app.use(express.json());
 app.use('/events', eventController)
 
 app.get('/', (req, res) => {
-    res.send(MONGODB_URL)
+    res.send('up and running')
 })
 
 
