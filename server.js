@@ -4,10 +4,14 @@ const app = express();
 const mongoose = require('mongoose');
 const cors = require('cors');
 
+//DOTENV
+require('dotenv').config()
+const APIKEY = process.env.APIKEY
+
 // GLOBAL VARIABLES 
 const PORT = process.env.PORT || 3000;
 const db = mongoose.connection;
-const MONGODB_URL = process.env.MONGODB_URI || 'mongodb://localhost:27017/events';
+const MONGODB_URL = process.env.DB_URI || 'mongodb://localhost:27017/events';
 const eventController = require('./controllers/events.js')
 
 // CORS STUFF
