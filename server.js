@@ -63,15 +63,15 @@ try {
 // });
 
 // MIDDLEWARE
-app.options('*', cors(corsOptions))
+app.use(cors())
 // app.use(cors(corsOptions))
 app.use(express.json());
-app.use('/events', eventController)
+
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', 'http://localhost:3010');
     next();
   });
-
+app.use('/events', eventController)
 app.get('/', (req, res) => {
     res.send('up and running')
 })
